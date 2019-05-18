@@ -3,8 +3,12 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 public class Main {
-    private static final int CHAR_SIZE = 155;
+    private static final int CHAR_SIZE = 1024;
 
+    /**
+     * Req:  curl "http://localhost:8080/uri" -d 'hello'
+     * @param args
+     */
     public static void main(String[] args) {
         try {
             //完成bind和listen操作
