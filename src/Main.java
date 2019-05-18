@@ -6,7 +6,7 @@ public class Main {
     private static final int CHAR_SIZE = 1024;
 
     /**
-     * Req:  curl "http://localhost:8080/uri" -d 'hello'
+     * Req:  curl "http://localhost:8080/uri" -d 'hello world'
      * @param args
      */
     public static void main(String[] args) {
