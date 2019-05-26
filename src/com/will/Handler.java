@@ -1,5 +1,7 @@
 package com.will;
 
+import com.will.protocalBuilder.HttpReqEntity;
+
 import java.io.*;
 import java.net.Socket;
 
@@ -25,11 +27,13 @@ public class Handler  implements Runnable {
                 int len = reader.read(chars);
                 builder.append(new String(chars, 0, len));
             }
-//            System.out.println("Receive from client message=: \n" + builder);
+            System.out.println("Receive from client message=: \n" + builder);
+            String reqStr = builder.toString();
+            HttpReqEntity reqEntity = new HttpReqEntity(reqStr);
 
             // Echo 服务器
             PrintStream os = new PrintStream(socket.getOutputStream());
-            os.println(builder.toString());
+            os.println(reqStr);
             reader.close();
             socket.close();
         }catch (IOException e){
